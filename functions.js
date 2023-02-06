@@ -23,6 +23,12 @@ gridSquares.forEach((gridSquare) => {
     })
 })
 
+// changes the pixel size on canvas
+let newCanvasButton = document.createElement('button');
+newCanvasButton.classList.add('change-canvas-button');
+newCanvasButton.textContent = "New Canvas";
+divElementTwo.appendChild(newCanvasButton);
+
 
 // creates refresh button to reset state of grids
 let refreshButtonElement = document.createElement('button');

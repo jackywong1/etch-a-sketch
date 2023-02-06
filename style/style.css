@@ -1,7 +1,12 @@
+.body {
+    display: flex; 
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(16, 25px);
     grid-template-rows: repeat(16,minmax(25px, auto));
+    justify-content: center;
 }
 
 .gridSquare {
@@ -11,10 +16,29 @@
 }
 
 .gridSquare.active {
-    background-color: #add8e6;
+    background-color:red;
+    animation: 5s ease-in-out 0s infinite rainbow;
 }
 
-.refresh-button {
+@keyframes rainbow {
+    0% {background-color: red;}
+    12.5% {background-color: #ff00a8;}
+    25% {background-color: #c400ff;}
+    37.5% {background-color: #00d3ff;}
+    50% {background-color: #00ffaf;}
+    62.5% {background-color: #1aff00;}
+    75% {background-color: #dbff00;}
+    87.5% {background-color: #ffc000;}
+    100% {background-color: red;}
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.refresh-button, .change-canvas-button{
     margin-top: 100px;
-    margin-left: 175px;
+    max-width: 100px;
+    align-self: center
 }
