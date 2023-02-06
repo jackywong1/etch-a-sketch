@@ -1,11 +1,16 @@
 const numOfGrids = 256;
 
 
+
 // creates 16 x 16 grid
 let divElement = document.createElement('div');
 divElement.classList.add('container');
 let divElementTwo = document.createElement('div');
 divElementTwo.classList.add('button-container');
+
+let titleElement = document.createElement('h1');
+titleElement.textContent = "Etch-a-Sketch";
+document.body.appendChild(titleElement);
 
 for (let i = 0; i < numOfGrids; i++) {
     let gridElement = document.createElement('div');
