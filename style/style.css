@@ -1,28 +1,58 @@
-.body {
-    display: flex; 
+body {
+    background-image: url('wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 h1 {
     text-align: center;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(16, 25px);
-    grid-template-rows: repeat(16,minmax(25px, auto));
-    justify-content: center;
+
+.outer-container {
+    background-image: url('etch.png');
+    background-repeat: no-repeat;
+    /* background-size: 38% 100%; */
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto auto;
+    margin-top: 100px;
 }
 
-.gridSquare {
-    background-color: #fff;
-    border-style: solid;
-    border-width: 1px;
+
+.container {
+    display: grid;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    /* grid-template-columns: repeat(16, 25px);
+    grid-template-rows: repeat(16,minmax(25px, auto)); */
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
+
+
+.gridSquare {
+    background-color: #e3e3e3;
+    /* border-style: solid;
+    border-width: 0.5px; */
+    flex-shrink: 1;
+}
+
 
 .gridSquare.active {
     background-color:red;
     animation: 5s ease-in-out 0s infinite rainbow;
 }
+
 
 @keyframes rainbow {
     0% {background-color: red;}
@@ -36,13 +66,117 @@ h1 {
     100% {background-color: red;}
 }
 
+
+
+
+/* styling the refresh and colour picker buttons */
+
+
 .button-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    align-items: center;
 }
 
-.refresh-button, .change-canvas-button{
-    margin-top: 100px;
-    max-width: 100px;
-    align-self: center
+
+.refresh-button, .eraser-button {
+    width: 6rem;
+    height: 6rem;
+    border-color: transparent;
+    background-color: transparent;
+    text-align: center;
 }
+
+
+
+
+.refresh-button p, .eraser-button p {
+    color: #6b6868;
+    font-weight: 500;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 30px;
+}
+
+
+#colour-picker {
+    width: 5rem;
+    height: 2.5rem;
+    border-color: transparent;
+    background-color: transparent;
+    text-align: center;
+}
+
+
+input[type='color']::-webkit-color-swatch {
+    /* width: 70px;
+    height: 20px; */
+    /* justify-self: center; */
+    border: solid;
+    /* border-width: 0.01rem; */
+    border-radius: 20px;
+}
+
+
+/* styling the range slider that change the size of pixels */
+.slide-container {
+    width: 50%; /* Width of the outside container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  /* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 400px; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin: 2rem;
+    /* margin-left: 30px; */
+    border-radius: 7px;
+}
+ 
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+ 
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  /* this handles chrome, opera, safari and edge */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #a7a9a8; /* Green background */
+    border-radius: 15px;
+  }
+
+
+  /* this handles mozilla firefox */
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    border-radius: 15px;
+  }
+
+
+  footer {
+    margin-top: 2.5rem;
+  }
+
+
+  footer p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
