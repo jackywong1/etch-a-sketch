@@ -1,6 +1,5 @@
 let defaultDimension = 64;
 
-
 // create containers
 let outerContainer = document.createElement('div');
 outerContainer.classList.add('outer-container');
@@ -9,20 +8,18 @@ divElement.classList.add('container');
 let divElementTwo = document.createElement('div');
 divElementTwo.classList.add('button-container');
 
-
 // insert title for webpage
 // let titleElement = document.createElement('h1');
 // titleElement.textContent = "Etch-a-Sketch";
 // document.body.appendChild(titleElement);
-
 
 // create grid
 function createGrid (numGrids) {
     for (let i = 0; i < numGrids ** 2; i++) {
         let gridElement = document.createElement('div');
         gridElement.classList.add('gridSquare');
-        container.style.gridTemplateColumns = `repeat(${numGrids}, ${450/numGrids}px)`;
-        container.style.gridTemplateRows = `repeat(${numGrids}, minmax(${450/numGrids}px, auto))`;
+        container.style.gridTemplateColumns = `repeat(${numGrids}, ${490/numGrids}px)`;
+        container.style.gridTemplateRows = `repeat(${numGrids}, minmax(${490/numGrids}px, auto))`;
         divElement.appendChild(gridElement);
     }
     // create hover effect for grid squares
@@ -33,7 +30,6 @@ function createGrid (numGrids) {
         })
     })
 }
-
 
 outerContainer.appendChild(divElement);
 document.body.appendChild(outerContainer);
@@ -49,10 +45,8 @@ divElementTwo.appendChild(eraserButtonElement);
 outerContainer.appendChild(divElementTwo);
 document.body.appendChild(outerContainer);
 
-
 const eraserButton = document.querySelector('.eraser-button');
 eraserButton.addEventListener('click', eraseLines);
-
 
 function eraseLines() {
     const gridSquares = document.querySelectorAll('.gridSquare');
@@ -77,10 +71,8 @@ canvasInput.setAttribute('value', '50');
 canvasInput.setAttribute('class', 'slider');
 canvasInput.setAttribute('id', 'myRange');
 
-
 newCanvasSlider.appendChild(canvasInput);
 divElementTwo.appendChild(newCanvasSlider);
-
 
 function changePixelNum () {
     let currentPixelFrame = container.querySelectorAll('.gridSquare');
@@ -88,17 +80,14 @@ function changePixelNum () {
     createGrid(slider.value);
 }    
 
-
 // create colour picker
 let colourPickerButton = document.createElement('input');
 colourPickerButton.setAttribute('type', 'color');
 colourPickerButton.setAttribute('id', 'colour-picker');
 colourPickerButton.setAttribute('value', '#e3e3e3');
 
-
 let colourPickerText = document.createElement('p');
 colourPickerText.textContent = 'colour';
-
 
 colourPickerButton.appendChild(colourPickerText);
 newCanvasSlider.appendChild(colourPickerButton);
@@ -106,11 +95,9 @@ divElementTwo.appendChild(newCanvasSlider);
 outerContainer.appendChild(divElementTwo);
 document.body.appendChild(outerContainer);
 
-
 const colourButton = document.querySelector('#colour-picker');
 console.log(colourButton.value)
 colourButton.addEventListener('click', changeColour);
-
 
 function changeColour() {
     const gridSquares = document.querySelectorAll('.gridSquare');
@@ -132,10 +119,8 @@ divElementTwo.appendChild(refreshButtonElement);
 outerContainer.appendChild(divElementTwo);
 document.body.appendChild(outerContainer);
 
-
 const refreshButton = document.querySelector('.refresh-button');
 refreshButton.addEventListener('click', refreshStateOfGrids);
-
 
 function refreshStateOfGrids () {
     let allGrids = document.querySelectorAll('.gridSquare');
@@ -150,9 +135,7 @@ let slider = document.querySelector('#myRange');
 let output = document.querySelector('#demo');
 slider.addEventListener('mouseup', changePixelNum);
 
-
 createGrid(defaultDimension);
-
 
 // include name and project credit in footer
 const footerElement = document.createElement('footer');
